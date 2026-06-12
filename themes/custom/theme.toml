@@ -1,0 +1,9 @@
+name        = "personal"
+description = "A minimal, warm personal website theme for Zola — landing page + blog."
+homepage    = ""
+min_version = "0.18.0"
+license     = "MIT"
+
+[extra]
+# Theme author — change freely
+author = "you"

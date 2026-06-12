@@ -1,0 +1,49 @@
+// ── 13. RESPONSIVE ───────────────────────────────────────────────
+
+@media (max-width: 640px) {
+  :root { --nav-h: 52px; }
+
+  .landing        { padding-block: 3.5rem 2.5rem; }
+  .section-header { padding-block: 2rem 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  // Stack date above title+excerpt on narrow screens
+  .post-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem 0;
+  }
+
+  .post-date { padding-top: 0; }
+}
+
+
+// ── 14. PRINT ────────────────────────────────────────────────────
+
+@media print {
+  .site-header,
+  .site-footer,
+  .back-link,
+  .post-tags { display: none; }
+
+  body { background: white; color: black; font-size: 12pt; }
+
+  .post-content a::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    color: #666;
+  }
+}
+
+@mixin selection($bg, $fg) {
+  $selection-selectors: "selection", "-moz-selection";
+
+  @each $selector in $selection-selectors {
+    ::#{$selector} {
+      background-color: $bg;
+      color: $fg
+    }
+  }
+}
+
+@include selection(var(--bg-surface), var(--ac));

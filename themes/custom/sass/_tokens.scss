@@ -1,0 +1,69 @@
+@view-transition {
+  navigation: auto;
+}
+
+
+// ── 1. DESIGN TOKENS (light theme) ──────────────────────────────
+
+:root {
+  // Surfaces
+  --bg:            #fef9ec;
+  --bg-surface:    #fdf4d8;
+  --bg-code:       #f5ecd8;
+
+  // Text
+  --tx:            #2c2012;
+  --tx-muted:      #7a6a50;
+  --tx-faint:      #a89070;
+
+  // Accent — warm amber
+  --ac:            #c8921a;
+  --ac-hover:      #a87415;
+  --ac-subtle:     #f5e5c0;
+
+  // Borders
+  --bd:            #e3d5bb;
+  --bd-light:      #ede5d0;
+
+  // Fonts
+  --ff-heading:    'Crimson Pro', Georgia, 'Times New Roman', serif;
+  --ff-body:       'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --ff-mono:       'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+
+  // Layout
+  --nav-h:         60px;
+  --content-w:     680px;
+  --wide-w:        900px;
+  --pad:           clamp(1rem, 5vw, 2rem);
+
+  // Motion
+  --t:             150ms ease;
+}
+
+
+
+// ── 2. DARK THEME PLACEHOLDER ────────────────────────────────────
+//
+//  Uncomment and fill in when you're ready to add dark mode.
+//  The .dark class is toggled by JavaScript; the media query
+//  handles system preference automatically.
+//
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --bg:         #1e1a12;
+//     --bg-surface: #252016;
+//     --bg-code:    #2a2418;
+//     --tx:         #ede5d0;
+//     --tx-muted:   #a08e72;
+//     --tx-faint:   #7a6a50;
+//     --ac:         #e0a83a;
+//     --ac-hover:   #f0bc50;
+//     --ac-subtle:  #3a2e10;
+//     --bd:         #3a3020;
+//     --bd-light:   #302815;
+//   }
+// }
+//
+// body.dark {
+//   /* same overrides as above */
+// }

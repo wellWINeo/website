@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default(value='en') }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {# ── SEO ──────────────────────────────────────────────────── #}
+  <title>{% block title %}{{ config.title }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
+  <link rel="canonical" href="{{ current_url | safe }}">
+
+  {# ── Favicon ──────────────────────────────────────────────── #}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  {# ── Fonts ────────────────────────────────────────────────── #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+  {# ── Styles ───────────────────────────────────────────────── #}
+  <link rel="stylesheet" href="{{ get_url(path='main.css') | safe }}">
+
+  {# ── Feed discovery ──────────────────────────────────────── #}
+  {% if config.generate_feeds %}
+  {% for feed_filename in config.feed_filenames %}
+  <link rel="alternate"
+        type="{% if feed_filename == 'atom.xml' %}application/atom+xml{% else %}application/rss+xml{% endif %}"
+        title="{{ config.title }}"
+        href="{{ get_url(path=feed_filename) | safe }}">
+  {% endfor %}
+  {% endif %}
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="{{ config.base_url | safe }}" class="site-name">{{ config.title }}</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        {% set blog_path = config.extra.blog_path | default(value='blog') %}
+        <a href="{{ get_url(path='@/' ~ blog_path ~ '/_index.md') | safe }}">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; {{ now() | date(format="%Y") }} {{ config.title }}</p>
+      {% if config.generate_feeds %}
+      <div class="footer-links">
+        <a href="{{ get_url(path=config.feed_filenames | first) | safe }}">RSS</a>
+      </div>
+      {% endif %}
+    </div>
+  </footer>
+
+</body>
+</html>

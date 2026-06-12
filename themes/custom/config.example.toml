@@ -1,0 +1,61 @@
+# ================================================================
+#  config.toml — example configuration for the personal theme
+#  Copy relevant sections into your own config.toml and adjust.
+# ================================================================
+
+base_url     = "https://yoursite.com"
+title        = "Your Name"
+description  = "Your tagline or a one-sentence bio."
+
+compile_sass  = true
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+# Optional: enable tags taxonomy
+taxonomies = [
+  { name = "tags" },
+]
+
+[markdown]
+highlight_code   = true
+highlight_theme  = "base16-ocean-light"   # warm light theme
+
+[extra]
+# ── Identity ─────────────────────────────────────────────────────
+
+# Short tagline shown below your name on the landing page
+tagline = "Software engineer & occasional writer"
+
+# Path to an image in your static/ folder — leave empty to use initials
+# avatar = "avatar.jpg"
+
+# Path to the blog section (default: "blog")
+blog_path = "blog"
+
+# Set to false to hide the recent posts list on the landing page
+show_recent_posts = true
+
+
+# ── Contact / social links ────────────────────────────────────────
+#
+# Each link renders as a pill on the landing page.
+# Set external = false for mailto: or internal links.
+
+[[extra.links]]
+name     = "Email"
+url      = "mailto:you@example.com"
+external = false
+
+[[extra.links]]
+name     = "GitHub"
+url      = "https://github.com/yourusername"
+external = true
+
+[[extra.links]]
+name     = "Mastodon"
+url      = "https://mastodon.social/@yourusername"
+external = true
+
+# [[extra.links]]
+# name     = "LinkedIn"
+# url      = "https://linkedin.com/in/yourprofile"
+# external = true

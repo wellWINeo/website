@@ -1,0 +1,117 @@
+// ── 9. PROSE (post body content) ─────────────────────────────────
+
+.post-content {
+  > * + * { margin-top: 1.5em; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--ff-heading);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--tx);
+    line-height: 1.25;
+    margin-top: 2.5rem;
+    margin-bottom: -0.5rem; // negative collapses with > * + * margin
+  }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.625rem; }
+  h3 { font-size: 1.3125rem; }
+  h4 { font-size: 1.125rem; }
+
+  p    { line-height: 1.75; color: var(--tx); }
+
+  a {
+    color: var(--ac);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  strong { font-weight: 600; }
+  em     { font-style: italic; }
+
+  blockquote {
+    border-left: 3px solid var(--bd);
+    padding-left: 1.25rem;
+    color: var(--tx-muted);
+    font-style: italic;
+  }
+
+  code {
+    font-family: var(--ff-mono);
+    font-size: 0.875em;
+    background: var(--bg-code);
+    color: var(--tx);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+  }
+
+  pre {
+    background: var(--bg-code);
+    border: 1px solid var(--bd);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+
+    code {
+      background: none;
+      padding: 0;
+      font-size: 0.875rem;
+      color: var(--tx);
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.375em;
+      &::marker { color: var(--ac); }
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--bd);
+    margin-block: 2.5rem;
+  }
+
+  img {
+    border-radius: 8px;
+    max-width: 100%;
+  }
+
+  figure {
+    text-align: center;
+
+    figcaption {
+      margin-top: 0.625rem;
+      font-size: 0.875rem;
+      color: var(--tx-faint);
+      font-style: italic;
+    }
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+
+    th,
+    td {
+      padding: 0.625rem 0.875rem;
+      border-bottom: 1px solid var(--bd-light);
+      text-align: left;
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--tx-muted);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+}

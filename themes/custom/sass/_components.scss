@@ -1,0 +1,60 @@
+// ── 10. TAGS ─────────────────────────────────────────────────────
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--bd-light);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--bd);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  color: var(--tx-muted);
+  text-decoration: none;
+  transition: border-color var(--t), color var(--t);
+
+  &:hover {
+    border-color: var(--ac);
+    color: var(--ac);
+  }
+}
+
+
+// ── 11. PAGINATION ───────────────────────────────────────────────
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding-block: 2.5rem;
+  font-size: 0.9375rem;
+}
+
+.pagination-btn {
+  color: var(--ac);
+  text-decoration: none;
+  transition: color var(--t);
+
+  &:hover { color: var(--ac-hover); }
+}
+
+.pagination-disabled {
+  color: var(--tx-faint);
+  pointer-events: none;
+}
+
+.pagination-info {
+  font-size: 0.875rem;
+  color: var(--tx-faint);
+}

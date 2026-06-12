@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="landing">
+  <div class="landing-inner">
+
+    {# ── Avatar ───────────────────────────────────────────── #}
+    {% set avatar = config.extra.avatar | default(value='') %}
+    {% if avatar %}
+    <img class="avatar"
+         src="{{ get_url(path=avatar) | safe }}"
+         alt="{{ config.title }}"
+         width="72" height="72">
+    {% else %}
+    {# Fallback: first two letters of site title #}
+    <div class="avatar-initials" aria-hidden="true">
+      {{ config.title | truncate(length=2, end='') | upper }}
+    </div>
+    {% endif %}
+
+    {# ── Name & tagline ────────────────────────────────────── #}
+    <h1 class="landing-name">{{ config.title }}</h1>
+
+    {% if config.extra.tagline %}
+    <p class="landing-tagline">{{ config.extra.tagline }}</p>
+    {% endif %}
+
+    {% if config.description %}
+    <p class="landing-bio">{{ config.description }}</p>
+    {% endif %}
+
+    {# ── Social / contact links ───────────────────────────── #}
+    {% if config.extra.links %}
+    <nav class="social-links" aria-label="Contact and social links">
+      {% for link in config.extra.links %}
+      <a href="{{ link.url | safe }}"
+         class="social-link"
+         {% if link.external | default(value=true) %}
+         rel="noopener noreferrer" target="_blank"
+         {% endif %}>
+        {{ link.name }}
+      </a>
+      {% endfor %}
+    </nav>
+    {% endif %}
+
+    {# ── Recent posts teaser ──────────────────────────────── #}
+    {% if config.extra.show_recent_posts | default(value=true) %}
+    {% set blog_path = config.extra.blog_path | default(value='blog') %}
+    {% set blog = get_section(path=blog_path ~ '/_index.md') %}
+    {% if blog and blog.pages %}
+    <div class="recent-posts">
+      <p class="recent-label">Recent writing</p>
+      {% set recent = blog.pages | sort(attribute='date') | reverse | slice(end=3) %}
+      {% for page in recent %}
+      <div class="recent-item">
+        <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">
+          {{ page.date | date(format='%b %-d, %Y') }}
+        </time>
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+      </div>
+      {% endfor %}
+      <a href="{{ get_url(path='@/' ~ blog_path ~ '/_index.md') | safe }}"
+         class="all-posts-link">All posts →</a>
+    </div>
+    {% endif %}
+    {% endif %}
+
+  </div>
+</section>
+{% endblock %}
