@@ -1,0 +1,46 @@
+# The URL the site will be built for
+base_url = "https://uspenskiy.tech"
+
+title = "Stepan Uspenskiy's site"
+description = "I'm a .NET engineer at Dodo Engineering helping take Franchise as a Service global — and believing in a pragmatic agentic AI future."
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false 
+
+theme = "custom"
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+
+
+[languages.ru]
+title = "Stepan Uspenskiy's site"
+description = "I'm a .NET engineer at Dodo Engineering helping take Franchise as a Service global — and believing in a pragmatic agentic AI future."
+
+
+[extra]
+tagline = "Software engineer"
+show_recent_posts = true
+avatar = "me.webp"
+
+[[extra.links]]
+name = "Email"
+url = "mailto:stepan@uspenskiy.su"
+external = false
+
+[[extra.links]]
+name = "Github"
+url = "https://github.com/wellwineo"
+external = true
+
+[[extra.links]]
+name = "Linkedin"
+url = "https://www.linkedin.com/in/stepan-uspenskiy-92076125b/"
+external = true
+
+[[extra.links]]
+name = "Telegram"
+url = "https://t.me/IwneoI"
+external = true
