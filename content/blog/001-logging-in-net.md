@@ -1,7 +1,7 @@
 +++
 title = "Logging in .NET"
-date = 2026-06-12
-description = "Some test description"
+date = 2024-08-28
+description = "Structured loggin and best-practices for .NET"
 +++
 
 > This text was originally written for an internal talk. Some time later I decided to publish it as my first post.
