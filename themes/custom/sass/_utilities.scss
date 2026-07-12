@@ -1,4 +1,4 @@
-// ── 13. RESPONSIVE ───────────────────────────────────────────────
+// Responsiveness
 
 @media (max-width: 640px) {
   :root { --nav-h: 52px; }
@@ -18,7 +18,7 @@
 }
 
 
-// ── 14. PRINT ────────────────────────────────────────────────────
+// Print
 
 @media print {
   .site-header,
