@@ -4,8 +4,6 @@ date = 2026-07-12
 description = "How I built a workflow for writing my thesis: Claude Code on an Ubuntu VPS, source processing, batch review, and reproducible DOCX builds."
 +++
 
-# How I Wrote My Thesis with an Agent
-
 This year I wrote my graduation thesis about `buildout` — a CLI and MCP server
 for working with documentation in buildin.ai. I built the project itself with
 Claude Code and Spec Kit. To write the explanatory report, I created a separate
