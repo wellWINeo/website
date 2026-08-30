@@ -73,3 +73,11 @@ The models themselves, however, impressed me.
 
 So, to keep playing around with them, I decided to use OpenCode with an
 OpenAI provider instead — luckily, that’s possible there, unlike with Claude.
+
+> UPD (30.08.2026)
+> After using OpenCode for several weeks, I found that it didn’t work
+> the way I wanted (it’s hard to explain; I simply wasn’t satisfied
+> with the result).
+> I assumed it was just too heavyweight (too many tools and a large
+> system prompt). In the end, I switched to the much lighter
+> [pi coding agent](https://pi.dev/) and am happy with it now.
