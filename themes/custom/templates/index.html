@@ -51,16 +51,14 @@
     {% if blog and blog.pages %}
     <div class="recent-posts">
       <p class="recent-label">Recent writing</p>
-      {% set recent = blog.pages | sort(attribute='date') | reverse %}
+      {% set recent = (blog.pages | sort(attribute='date') | reverse)[:3] %}
       {% for page in recent %}
-      {% if loop.index <= 3 %}
       <div class="recent-item">
         <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">
           {{ page.date | date(format='%b %-d, %Y') }}
         </time>
         <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
       </div>
-      {% endif %}
       {% endfor %}
       <a href="{{ get_url(path='@/' ~ blog_path ~ '/_index.md') | safe }}"
          class="all-posts-link">All posts →</a>
