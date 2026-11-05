@@ -47,11 +47,11 @@
     {# ── Recent posts teaser ──────────────────────────────── #}
     {% if config.extra.show_recent_posts | default(value=true) %}
     {% set blog_path = config.extra.blog_path | default(value='blog') %}
-    {% set blog = get_section(path=blog_path ~ '/_index.md') %}
+    {% set blog = get_section(path=blog_path ~ '/_index.md', lang=lang) %}
     {% if blog and blog.pages %}
     <div class="recent-posts">
       <p class="recent-label">Recent writing</p>
-      {% set recent = blog.pages | sort(attribute='date') | reverse | slice(end=3) %}
+      {% set recent = (blog.pages | sort(attribute='date') | reverse)[:3] %}
       {% for page in recent %}
       <div class="recent-item">
         <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">
